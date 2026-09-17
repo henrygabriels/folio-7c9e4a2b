@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Esoteric Intelligence is a private investment analysis and research house in London."
+    />
+    <meta name="theme-color" content="#043927" />
+    <meta property="og:title" content="Esoteric Intelligence" />
+    <meta
+      property="og:description"
+      content="A private investment analysis and research house in London."
+    />
+    <meta property="og:type" content="website" />
+    <title>Esoteric Intelligence — Private Investment Research, London</title>
+
+    <style>
+      :root {
+        --green: #043927;
+        --green-deep: #022b1d;
+        --paper: #f2eadb;
+        --paper-dim: rgba(242, 234, 219, 0.68);
+        --line: rgba(242, 234, 219, 0.23);
+        --pink: #bd748a;
+        --serif: "Times New Roman", Times, serif;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      html {
+        background: var(--green);
+        color-scheme: dark;
+      }
+
+      body {
+        min-width: 320px;
+        min-height: 100vh;
+        min-height: 100svh;
+        margin: 0;
+        overflow: hidden;
+        background:
+          radial-gradient(circle at 78% 18%, rgba(255, 255, 255, 0.025), transparent 25rem),
+          linear-gradient(135deg, var(--green) 0%, var(--green-deep) 100%);
+        color: var(--paper);
+        font-family: var(--serif);
+        -webkit-font-smoothing: antialiased;
+      }
+
+      body::before {
+        position: fixed;
+        inset: 0;
+        z-index: 0;
+        background-image:
+          linear-gradient(var(--line) 1px, transparent 1px),
+          linear-gradient(90deg, var(--line) 1px, transparent 1px);
+        background-position: -1px -1px;
+        background-size: clamp(5rem, 8vw, 8.5rem) clamp(5rem, 8vw, 8.5rem);
+        content: "";
+        opacity: 0.22;
+        pointer-events: none;
+        animation: register-shift 24s ease-in-out infinite alternate;
+      }
+
+      body::after {
+        position: fixed;
+        inset: 0;
+        z-index: 3;
+        border: clamp(0.38rem, 0.58vw, 0.58rem) solid var(--pink);
+        content: "";
+        pointer-events: none;
+      }
+
+      .page {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        min-height: 100vh;
+        min-height: 100svh;
+        padding: clamp(2rem, 4.2vw, 4.5rem);
+      }
+
+      .masthead,
+      .footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1.5rem;
+        color: var(--paper-dim);
+        font-size: clamp(0.66rem, 0.78vw, 0.8rem);
+        letter-spacing: 0.16em;
+        line-height: 1;
+        text-transform: uppercase;
+      }
+
+      .masthead {
+        animation: enter 700ms 80ms both;
+      }
+
+      .mark {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        color: var(--paper);
+      }
+
+      .mark::before {
+        display: block;
+        width: 0.65rem;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        background: var(--pink);
+        box-shadow: 0 0 0 0.25rem rgba(255, 47, 146, 0.14);
+        content: "";
+        animation: pulse 3.2s ease-in-out infinite;
+      }
+
+      .hero {
+        align-self: center;
+        width: min(100%, 90rem);
+        padding: clamp(3.5rem, 7vh, 7rem) 0;
+      }
+
+      h1 {
+        max-width: 12ch;
+        margin: 0;
+        font-size: clamp(3.7rem, 11.25vw, 11.5rem);
+        font-weight: 400;
+        letter-spacing: -0.075em;
+        line-height: 0.76;
+        text-wrap: balance;
+        animation: enter 850ms 160ms both;
+      }
+
+      h1 span {
+        display: block;
+        padding-left: 0.88em;
+        color: var(--pink);
+        font-style: italic;
+      }
+
+      .hero-bottom {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        align-items: end;
+        gap: clamp(2rem, 6vw, 7rem);
+        margin-top: clamp(2.75rem, 7vh, 6.5rem);
+        border-top: 1px solid var(--line);
+        padding-top: clamp(1.4rem, 2.5vw, 2.3rem);
+      }
+
+      .positioning {
+        max-width: 47rem;
+        margin: 0;
+        color: var(--paper-dim);
+        font-size: clamp(0.98rem, 1.25vw, 1.22rem);
+        line-height: 1.48;
+        animation: enter 750ms 310ms both;
+      }
+
+      .positioning em {
+        color: var(--paper);
+        font-weight: 400;
+      }
+
+      .contact {
+        position: relative;
+        display: inline-flex;
+        min-width: 12.5rem;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2.5rem;
+        overflow: hidden;
+        border: 1px solid var(--pink);
+        padding: 1.05rem 1.2rem;
+        background: var(--pink);
+        color: var(--green-deep);
+        font-family: var(--serif);
+        font-size: 1rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        line-height: 1;
+        text-decoration: none;
+        text-transform: uppercase;
+        animation: enter 750ms 390ms both;
+        transition: color 240ms ease, transform 240ms ease;
+      }
+
+      .contact::before {
+        position: absolute;
+        inset: 0;
+        background: var(--green-deep);
+        content: "";
+        transform: translateX(-102%);
+        transition: transform 260ms cubic-bezier(0.2, 0.75, 0.25, 1);
+      }
+
+      .contact span {
+        position: relative;
+        z-index: 1;
+      }
+
+      .contact .arrow {
+        font-size: 1.35rem;
+        font-weight: 400;
+        transition: transform 240ms ease;
+      }
+
+      .contact:hover,
+      .contact:focus-visible {
+        color: var(--pink);
+        transform: translateY(-3px);
+      }
+
+      .contact:hover::before,
+      .contact:focus-visible::before {
+        transform: translateX(0);
+      }
+
+      .contact:hover .arrow,
+      .contact:focus-visible .arrow {
+        transform: translate(0.18rem, -0.18rem);
+      }
+
+      .contact:focus-visible {
+        outline: 2px solid var(--paper);
+        outline-offset: 4px;
+      }
+
+      .footer {
+        animation: enter 700ms 480ms both;
+      }
+
+      .footer .number {
+        color: var(--pink);
+      }
+
+      @keyframes enter {
+        from {
+          opacity: 0;
+          transform: translateY(1rem);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          box-shadow: 0 0 0 0.22rem rgba(255, 47, 146, 0.12);
+        }
+        50% {
+          box-shadow: 0 0 0 0.42rem rgba(255, 47, 146, 0.02);
+        }
+      }
+
+      @keyframes register-shift {
+        from {
+          transform: translate3d(0, 0, 0);
+        }
+        to {
+          transform: translate3d(0.7rem, -0.7rem, 0);
+        }
+      }
+
+      @media (max-width: 700px) {
+        .page {
+          padding: 2.25rem 2rem;
+        }
+
+        .masthead > :last-child,
+        .footer > :last-child {
+          display: none;
+        }
+
+        .hero {
+          padding: 3rem 0 2rem;
+        }
+
+        h1 {
+          font-size: clamp(3.45rem, 18.5vw, 7.2rem);
+          line-height: 0.8;
+        }
+
+        h1 span {
+          padding-left: 0.24em;
+        }
+
+        .hero-bottom {
+          grid-template-columns: 1fr;
+          align-items: start;
+          gap: 1.75rem;
+          margin-top: 3rem;
+        }
+
+        .contact {
+          width: 100%;
+          min-height: 3.5rem;
+        }
+
+        .footer {
+          justify-content: flex-start;
+        }
+      }
+
+      @media (max-height: 690px) and (min-width: 701px) {
+        .page {
+          padding-block: 2rem;
+        }
+
+        .hero {
+          padding-block: 2.25rem;
+        }
+
+        h1 {
+          font-size: clamp(4rem, 9.8vw, 8rem);
+        }
+
+        .hero-bottom {
+          margin-top: 2.5rem;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          scroll-behavior: auto !important;
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <main class="page">
+      <header class="masthead" aria-label="Esoteric Intelligence">
+        <div class="mark">Private investment analysis</div>
+        <div>London · MMXXVI</div>
+      </header>
+
+      <section class="hero" aria-labelledby="site-title">
+        <h1 id="site-title">Esoteric <span>Intelligence</span></h1>
+
+        <div class="hero-bottom">
+          <p class="positioning">
+            <em>Esoteric Intelligence, London.</em> A private investment analysis
+            &amp; research house examining public companies, market structures and
+            the industrial systems forming around emergent technologies. Our work
+            combines primary-source diligence, thematic inquiry and proprietary
+            analytical frameworks for a limited network of investors, executives
+            and institutions.
+          </p>
+
+          <a
+            class="contact"
+            href="mailto:hello@esotericintelligence.baby?subject=Enquiry%20%E2%80%94%20Esoteric%20Intelligence"
+            aria-label="Email Esoteric Intelligence at hello@esotericintelligence.baby"
+          >
+            <span>Get in touch</span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <div><span class="number">EI—LONDON</span> · Private circulation</div>
+        <div>Esoteric Intelligence, London</div>
+      </footer>
+    </main>
+  </body>
+</html>
