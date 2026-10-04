@@ -43,7 +43,7 @@
         min-height: 100vh;
         min-height: 100svh;
         margin: 0;
-        overflow: hidden;
+        overflow-x: hidden;
         background:
           radial-gradient(circle at 78% 18%, rgba(255, 255, 255, 0.025), transparent 25rem),
           linear-gradient(135deg, var(--green) 0%, var(--green-deep) 100%);
@@ -122,7 +122,7 @@
       }
 
       .hero {
-        align-self: center;
+        align-self: start;
         width: min(100%, 90rem);
         padding: clamp(3.5rem, 7vh, 7rem) 0;
       }
@@ -156,12 +156,25 @@
       }
 
       .positioning {
-        max-width: 47rem;
+        max-width: 55rem;
         margin: 0;
         color: var(--paper-dim);
-        font-size: clamp(0.98rem, 1.25vw, 1.22rem);
-        line-height: 1.48;
+        font-size: clamp(0.98rem, 1.1vw, 1.1rem);
+        line-height: 1.58;
         animation: enter 750ms 310ms both;
+      }
+
+      .positioning p {
+        margin: 0;
+      }
+
+      .positioning p + p {
+        margin-top: 1.35em;
+      }
+
+      .positioning .intro {
+        font-size: clamp(1.05rem, 1.25vw, 1.22rem);
+        line-height: 1.48;
       }
 
       .positioning em {
@@ -234,6 +247,7 @@
       }
 
       .footer {
+        padding-top: clamp(1.5rem, 3vw, 3rem);
         animation: enter 700ms 480ms both;
       }
 
@@ -353,14 +367,45 @@
         <h1 id="site-title">Esoteric <span>Intelligence</span></h1>
 
         <div class="hero-bottom">
-          <p class="positioning">
-            <em>Esoteric Intelligence, London.</em> A private investment analysis
-            &amp; research house examining public companies, market structures and
-            the industrial systems forming around emergent technologies. Our work
-            combines primary-source diligence, thematic inquiry and proprietary
-            analytical frameworks for a limited network of investors, executives
-            and institutions.
-          </p>
+          <div class="positioning">
+            <p class="intro">
+              <em>Esoteric Intelligence, London.</em> A private investment analysis
+              &amp; research house examining public companies, market structures and
+              the industrial systems forming around emergent technologies.
+            </p>
+
+            <p>
+              Our current fixation is future infrastructure. We believe it is of
+              primary importance for investors in Q3 2026 to understand the complex
+              financial, scientific, and geopolitical factors which will ultimately
+              determine where the border is drawn between data centres and the rest
+              of the world&mdash;and if that border will be drawn at all.
+            </p>
+
+            <p>
+              We believe that the research of traditional financial analysts&mdash;who
+              seek to understand an equity through its position within a sector&mdash;is
+              of limited efficacy to investors operating within the unprecedentedly
+              complex interdependency of instruments within the modern market.
+              Instead, the team at Esoteric Intelligence combine primary-source
+              diligence, deep thematic inquiry and proprietary analytical frameworks
+              to model sector-wide future outcomes, typically through the lens of a
+              single equity.
+            </p>
+
+            <p>
+              The team at Esoteric Intelligence number decades of financial and
+              sector-relevant experience, working alongside internationally-recognised
+              novelists and artists. We are always interested in hearing from new
+              voices.
+            </p>
+
+            <p>
+              Esoteric Intelligence is not currently taking on new clients. We do
+              occasionally have slots for commissioned research. Please get in touch
+              if you would like to be considered when we have availability for either.
+            </p>
+          </div>
 
           <a
             class="contact"
